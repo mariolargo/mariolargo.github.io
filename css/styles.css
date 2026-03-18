@@ -1,0 +1,90 @@
+/* Declaration variables */
+
+/* General styles*/
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+}
+
+nav {
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+}
+
+h1 {
+  font-size: 8rem;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #1375b0; /* Change text color */
+  font-size: 24px; /* Set a specific font size */
+  font-family: sans-serif; /* Define the font */
+  border-bottom: 2px solid #1375b0; /* Add a bottom border */
+  padding-bottom: 5px; /* Add some space below the border */
+  margin-top: 1.5em; /* Adjust top margin */
+}
+
+h3 {
+  color: #333; /* Change text color */
+  font-size: 20px; /* Set a specific font size */
+  font-family: sans-serif; /* Define the font */
+  margin-top: 1em; /* Adjust top margin */
+  text-align: left; /* Align text to the left */
+}
+
+ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 10px 20px;
+  overflow: visible;
+}
+
+ol {
+  list-style-type: decimal;
+  margin: 0;
+  padding: 20px;
+}
+
+.layout {
+  display: flex; /* Establishes a flex container */
+  gap: 20px; /* Adds space between the main and aside elements */
+}
+.container {
+  flex: 3; /* main takes up 3 parts of the available space */
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+aside {
+  flex: 1; /* aside takes up 1 part of the available space (making it a sidebar) */
+  padding: 15px;
+  margin-left: 15px;
+  background-color: lightgray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+/* Utilities styles */
+strong {
+  font-weight: bold;
+}
+
+p {
+  padding: 10px;
+}
