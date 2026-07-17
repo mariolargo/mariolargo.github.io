@@ -88,3 +88,10 @@ strong {
 p {
   padding: 10px;
 }
+
+.highlight {
+  background-color: #ffeb3b; /* Vibrant yellow */
+  color: #f00; /* Ensures text remains legible */
+  padding: 0 4px; /* Adds breathing room on sides */
+  border-radius: 2px; /* Slightly softens edges */
+}
