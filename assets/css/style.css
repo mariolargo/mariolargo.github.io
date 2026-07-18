@@ -5,6 +5,15 @@
 /* Declaration variables */
 
 /* General styles*/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 html {
   font-size: 10px;
 }
