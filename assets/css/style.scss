@@ -58,42 +58,55 @@ ol {
 }
 
 .layout {
-  display: flex; /* Establishes a flex container */
-  gap: 20px; /* Adds space between the main and aside elements */
-  .container {
-    flex: 3; /* main takes up 3 parts of the available space */
-    background-color: $container-color;
-    padding: 20px;
-    header {
-      text-align: center;
-      padding: 1em;
-      nav {
-        overflow: hidden;
-      }
-      h1 {
-        font-size: 8rem;
-        padding: 2rem;
-        margin-bottom: 1rem;
-      }
+  background-color: $container-color;
+  header {
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid gray;
+    nav {
+      overflow: hidden;
     }
-    footer {
-      text-align: center;
-      padding: 1em;
+    h1 {
+      font-size: 8rem;
+      padding: 2rem;
+      margin-bottom: 1rem;
     }
   }
-  aside {
-    flex: 1; /* aside takes up 1 part of the available space (making it a sidebar) */
-    padding: 15px;
-    margin-left: 15px;
-    background-color: $aside-color;
-    box-shadow: 2px 2px 5px $shadow-color; /* Add a subtle shadow */
-    h3 {
-      color: $h3-color; /* Change text color */
-      font-size: 20px; /* Set a specific font size */
-      font-family: sans-serif; /* Define the font */
-      margin-top: 1em; /* Adjust top margin */
-      text-align: left; /* Align text to the left */
+  .container {
+    display: flex; /* Establishes a flex container */
+    gap: 20px; /* Adds space between the main and aside elements */
+    padding: 20px;
+    main {
+      flex: 3; /* main takes up 3 parts of the available space */
+      section {
+        width: 100%;
+        padding-bottom: 0;
+      }
     }
+    aside {
+      flex: 1; /* aside takes up 1 part of the available space (making it a sidebar) */
+      padding: 15px;
+      margin-left: 15px;
+      background-color: $aside-color;
+      box-shadow: 2px 2px 5px $shadow-color; /* Add a subtle shadow */
+      h3 {
+        color: $h3-color; /* Change text color */
+        font-size: 20px; /* Set a specific font size */
+        font-family: sans-serif; /* Define the font */
+        margin-top: 1em; /* Adjust top margin */
+        text-align: left; /* Align text to the left */
+      }
+    }
+  }
+  footer {
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid gray;
+    bottom: 0;
   }
 }
 
@@ -104,6 +117,7 @@ strong {
 
 p {
   padding: 10px;
+  margin: 0;
 }
 
 .highlight {
