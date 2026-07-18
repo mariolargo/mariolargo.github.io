@@ -1,0 +1,114 @@
+---
+---
+
+/* Declaration variables */
+$body-font-family: Montserrat, Arial, Helvetica, sans-serif;
+$font-size: 10px;
+$h2-color: #1375b0;
+$h3-color: #333;
+$container-color: #f0f0f0;
+$aside-color: lightgray;
+$highlight-bg-color: #ffeb3b;
+$highlight-color: #f00;
+$shadow-color: rgba(0, 0, 0, 0.3);
+
+// Import the Minimal theme
+@import "{{ site.theme }}";
+/* General styles*/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-family: $body-font-family;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: $h2-color; /* Change text color */
+  font-size: 24px; /* Set a specific font size */
+  font-family: sans-serif; /* Define the font */
+  border-bottom: 2px solid $h2-color; /* Add a bottom border */
+  padding-bottom: 5px; /* Add some space below the border */
+  margin-top: 1.5em; /* Adjust top margin */
+}
+
+ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 10px 20px;
+  overflow: visible;
+}
+
+ol {
+  list-style-type: decimal;
+  margin: 0;
+  padding: 20px;
+}
+
+.layout {
+  display: flex; /* Establishes a flex container */
+  gap: 20px; /* Adds space between the main and aside elements */
+  .container {
+    flex: 3; /* main takes up 3 parts of the available space */
+    background-color: $container-color;
+    padding: 20px;
+    header {
+      text-align: center;
+      padding: 1em;
+      nav {
+        overflow: hidden;
+      }
+      h1 {
+        font-size: 8rem;
+        padding: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+    }
+  }
+  aside {
+    flex: 1; /* aside takes up 1 part of the available space (making it a sidebar) */
+    padding: 15px;
+    margin-left: 15px;
+    background-color: $aside-color;
+    box-shadow: 2px 2px 5px $shadow-color; /* Add a subtle shadow */
+    h3 {
+      color: $h3-color; /* Change text color */
+      font-size: 20px; /* Set a specific font size */
+      font-family: sans-serif; /* Define the font */
+      margin-top: 1em; /* Adjust top margin */
+      text-align: left; /* Align text to the left */
+    }
+  }
+}
+
+/* Utilities styles */
+strong {
+  font-weight: bold;
+}
+
+p {
+  padding: 10px;
+}
+
+.highlight {
+  background-color: $highlight-bg-color; /* Vibrant yellow */
+  color: $highlight-color; /* Ensures text remains legible */
+  padding: 0 4px; /* Adds breathing room on sides */
+  border-radius: 2px; /* Slightly softens edges */
+}
