@@ -145,7 +145,7 @@ build and commit changes.
 
 #### 6. Push to Your Fork
 
-Upload your local branch and commits up to your GitHub remote workspace (`origin`).
+Upload your local branch and commits up to your own GitHub remote workspace (`origin`).
 
 ```
 # Push your feature branch to your GitHub fork
@@ -156,7 +156,7 @@ git push origin feature/your-descriptive-feature-name
 
 Submit your proposed code changes back to the original repository for review.
 
-1. Go to the original project repository on GitHub.
+1. Go to the original project repository on GitHub and change to `development` branch.
 2. You will see a prominent yellow banner reading **"Compare & pull request"**. Click it.
 3. Ensure the **base repository** points to the original project and the **head repository** points to your fork and feature branch.
 4. Provide a clear title and detail your updates in the description template.
