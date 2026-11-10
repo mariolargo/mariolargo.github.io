@@ -15,7 +15,7 @@ Documentation: [Javadocs](https://dropbox.github.io/dropbox-sdk-java/)
 
 ## 🚀 Overview
 
-A brief explanation of what the application does and the exact problem it solves.
+A brief description or explanation of what the application does and the exact problem it solves.
 
 ## 🛠️ Tech Stack
 
@@ -25,8 +25,19 @@ A brief explanation of what the application does and the exact problem it solves
 
 ## 🧩 Architecture
 
-The following diagram shows the authentication flow:
-![Authorization Diagram](./docs/auth-flow.png)
+The following diagrams show the authentication flow:
+
+_OAuth flow:_
+
+![Authorization Diagram](./assets/images/oauth-flow.png)
+
+_OAuth roles:_
+
+![Authorization Roles](./assets/images/oauth-roles.png)
+
+_How OAuth works:_
+
+![How Authorization works](./assets/images/oauth-work.png)
 
 ## ✨ Key Features
 
@@ -36,9 +47,35 @@ The following diagram shows the authentication flow:
 ## 📦 Installation & Setup
 
 1. Clone the repository: `git clone <url>`
-2. Install dependencies: `npm install`
-3. Configure environment variables (`.env`)
-4. Run local server: `npm start`
+2. Build and start the containers:
+```
+docker compose up -d --build
+```
+3. Install dependencies: 
+```
+docker compose exec app composer install/update
+docker compose exec app npm install
+```
+4. Configure environment variables (`.env`)
+5. Set appropriate folder permissions for Laravel:
+```
+sudo chmod +x src/setup-permissions.sh
+docker compose exec -u root app ./setup-permissions.sh
+```
+6. Generate application security key (APP_KEY) and add it to your `.env`:
+```
+docker compose exec app php artisan key:generate --show
+```
+7. Run initial database migrations:
+```
+docker compose exec app php artisan migrate
+```
+8. Run local server:
+```
+docker compose exec app php artisan serve
+docker compose exec app npm start
+```
+9. Navigate to `http://localhost:8081` or `https://localhost` in a web browser
 
 ## 📐 IDE Configuration
 
@@ -147,7 +184,8 @@ export default function App() {
 ```
 
 _Expected Result:_
-![Component Screenshot](path/to/screenshot.png)
+
+![Component Screenshot](./assets/images/dark-mode.png)
 
 ### 2. Fetching Data
 
@@ -156,4 +194,56 @@ To integrate your project with a backend API:
 ```javascript
 const data = await project.fetchData({ endpoint: "/api/v1/users" });
 console.log(data);
+```
+
+### 3. Running containers
+
+For production, to run Artisan commands, migrations, and other CLI tasks:
+
+```
+docker compose -f compose.prod.yml exec php-fpm php artisan route:list
+```
+
+To start the production environment, run:
+
+```
+docker compose -f compose.prod.yml up --build -d
+```
+
+To start the development environment, use:
+
+```
+docker compose -f compose.yaml up --build -d
+```
+
+### 4. View logs
+
+View historical logs for every service:
+
+```
+docker compose logs
+```
+
+View a single service:
+
+```
+docker compose logs <service_name>
+```
+
+Keep the terminal window open and view incoming logs in real time:
+
+```
+docker compose logs -f
+```
+
+View only the most recent log lines:
+
+```
+docker compose logs --tail 50
+```
+
+Mix parameters:
+
+```
+docker compose logs -f --tail 100 <service_name>
 ```
